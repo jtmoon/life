@@ -19,3 +19,6 @@ Boards are responsible for:
 Since cells are unaware of their environment, the board is responsible for identifying each cells neighbors, and notifying each cell to update.
 
 **Life** is responsible for rendering. **Boards** and **Cells** are only concerned about tracking the necessary information for understanding state. Rendering is decoupled from this and gets the information it needs to render the based on the current state. **Life** can configure the board and cells as necessary for rendering.
+
+### Libraries
+[Require.js](http://requirejs.org/) and [Lodash](https://lodash.com/) are used out of convenience. Both can be removed with minimal refactoring.
