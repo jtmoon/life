@@ -5,6 +5,7 @@ A Game of Life implementation using javascript and canvas.
 **Cells** are considered stateful, but unaware of their environment. They rely on their environment to notify them of changes that may affect them. Cells can update their state when notified.
 
 Cells are responsible for:
+
 1. Maintaining state.
 2. Evaluating if they live or die based on the number of live neighbors they have provided by the environment.
 
@@ -13,6 +14,7 @@ Each cell also has their own set of conditions determining how many live neighbo
 **Boards** are the environment containing cells. They define the number of cells per row and column within a defined space.
 
 Boards are responsible for:
+
 1. Tracking each cell.
 2. Processing a step in time.
 
