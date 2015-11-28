@@ -1,5 +1,5 @@
 # Game of Life
-A Game of Life implementation using canvas.
+A Game of Life implementation using javascript and canvas.
 
 ### Design
 **Cells** are considered stateful, but unaware of their environment. They rely on their environment to notify them of changes that may affect them. Cells can update their state when notified.
