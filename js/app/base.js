@@ -5,31 +5,29 @@ var _createClass = (function () { function defineProperties(target, props) { for
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 define([], function () {
-
-  /**
-   * Metadata containing the x and y position of a cell.
-   */
-
-  var CellMeta = (function () {
-    function CellMeta() {
-      _classCallCheck(this, CellMeta);
-
-      this._x = 0;
-      this._y = 0;
+  var Base = (function () {
+    function Base() {
+      _classCallCheck(this, Base);
     }
 
-    _createClass(CellMeta, [{
-      key: 'x',
-      get: function get() {
-        return this._x;
-      },
-      set: function set(value) {
-        this._x = value;
+    _createClass(Base, null, [{
+      key: 'makeID',
+      value: function makeID() {
+        var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        var text = '';
+        var i = 0;
+
+        while (i < 10) {
+          text += possible.charAt(Math.floor(Math.random() * possible.length));
+          i++;
+        }
+
+        return text;
       }
     }]);
 
-    return CellMeta;
+    return Base;
   })();
 
-  return CellMeta;
+  return Base;
 });
