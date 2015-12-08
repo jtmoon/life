@@ -15,7 +15,8 @@ function(Life) {
 
   // Instantiate the game.
   var overrides =  {
-    isRandom: true
+    isRandom: true,
+    isFullScreen: false
   }
   var life = new Life(overrides);
 
@@ -23,6 +24,14 @@ function(Life) {
   window.requestAnimationFrame(function() {
     life.start();
   }.bind(life));
+
+  window.onblur = function() {
+    life.stop();
+  };
+
+  window.onfocus = function() {
+    life.start();
+  };
 
   window.life = life;
 }

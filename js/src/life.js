@@ -15,7 +15,8 @@ class Life {
         dead: '#F7F8F8'
       },
       isRandom: false,
-      id: 'life'
+      id: 'life',
+      isFullScreen: true
     }
 
     // Update the configuration with the provided overrides.
@@ -81,8 +82,15 @@ class Life {
    */
   init() {
     let i, cells, cell, cellMeta;
+    let width = null;
+    let height = null;
 
-    this.board.calculateCellLayout();
+    if (!this.config.isFullScreen) {
+      width = this.canvas.width;
+      height = this.canvas.height;
+    }
+
+    this.board.calculateCellLayout(width, height);
     this.canvas.width = this.board.width;
     this.canvas.height = this.board.height;
     cells = this.board.populateBoard(this.config.isRandom);

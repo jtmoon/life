@@ -23,7 +23,8 @@ define(['lodash', 'board', 'cell'], function (_, Board, Cell) {
           dead: '#F7F8F8'
         },
         isRandom: false,
-        id: 'life'
+        id: 'life',
+        isFullScreen: true
       };
 
       // Update the configuration with the provided overrides.
@@ -104,8 +105,15 @@ define(['lodash', 'board', 'cell'], function (_, Board, Cell) {
             cells = undefined,
             cell = undefined,
             cellMeta = undefined;
+        var width = null;
+        var height = null;
 
-        this.board.calculateCellLayout();
+        if (!this.config.isFullScreen) {
+          width = this.canvas.width;
+          height = this.canvas.height;
+        }
+
+        this.board.calculateCellLayout(width, height);
         this.canvas.width = this.board.width;
         this.canvas.height = this.board.height;
         cells = this.board.populateBoard(this.config.isRandom);
